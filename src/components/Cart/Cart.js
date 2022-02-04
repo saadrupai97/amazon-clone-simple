@@ -41,6 +41,12 @@ const cart = (props) => {
         <div className='cart'>
             <h3 className='cart-title'>Order Summary</h3>
             <h4>Items Ordered: {cart.length}</h4>
+            <h4>Item Details:</h4>
+            <ul>
+                {
+                    cart.map(product => <li>{product.name}------- ${product.price}</li>)
+                }
+            </ul>
             <h4><small>Shipping Cost: <span className='cart-numbers'>{formatNumber(shippingCost)}</span></small></h4>
             <h4><small>Tax + Vat: <span className='cart-numbers'>{formatNumber(tax)}</span></small></h4>
             <h4>Total Price: <span className='cart-numbers'>{formatNumber(grandTotal)}</span></h4>
